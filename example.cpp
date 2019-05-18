@@ -92,7 +92,7 @@ main(int ac, const char* av[])
     string blockchain_path = xmreg::get_default_lmdb_folder(nettype);
 
     cout << "Mainnet blockchain path: " << blockchain_path << '\n'
-         << "Monero Version: " << MONERO_VERSION_FULL << '\n';
+         << "Monero Version: " << XCASH_VERSION_FULL << '\n';
 
     cout << "Initializaing MicroCore\n\n";
     xmreg::MicroCore mcore {blockchain_path, nettype};
