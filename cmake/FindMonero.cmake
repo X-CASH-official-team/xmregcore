@@ -110,18 +110,18 @@ message("FOUND Monero_LIBRARIES: ${Monero_LIBRARIES}")
 
 message(STATUS ${MONERO_SOURCE_DIR}/build)
 
-#macro(target_include_monero_directories target_name)
+macro(target_include_monero_directories target_name)
 
-    #target_include_directories(${target_name}
-        #PRIVATE
-        #${MONERO_SOURCE_DIR}/src
-        #${MONERO_SOURCE_DIR}/external
-        #${MONERO_SOURCE_DIR}/build
-        #${MONERO_SOURCE_DIR}/external/easylogging++
-        #${MONERO_SOURCE_DIR}/contrib/epee/include
-        #${MONERO_SOURCE_DIR}/external/db_drivers/liblmdb)
+    target_include_directories(${target_name}
+        PRIVATE
+        ${MONERO_SOURCE_DIR}/src
+        ${MONERO_SOURCE_DIR}/external
+        ${MONERO_SOURCE_DIR}/build
+        ${MONERO_SOURCE_DIR}/external/easylogging++
+        ${MONERO_SOURCE_DIR}/contrib/epee/include
+        ${MONERO_SOURCE_DIR}/external/db_drivers/liblmdb)
 
-#endmacro(target_include_monero_directories)
+endmacro(target_include_monero_directories)
 
 
 add_library(Monero::Monero INTERFACE IMPORTED GLOBAL)
