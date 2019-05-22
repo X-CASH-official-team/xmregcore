@@ -144,7 +144,7 @@ public:
     
     Input(Account* _acc,
             known_outputs_t const* _known_outputs,
-           AbstractCore const* _mcore)
+           AbstractCore* _mcore)
         : BaseIdentifier(_acc),          
           known_outputs {_known_outputs},
           mcore {_mcore}

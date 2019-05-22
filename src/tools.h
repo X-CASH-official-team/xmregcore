@@ -37,11 +37,11 @@ enum class address_type : uint8_t
 };
 
 string
-get_default_lmdb_folder(network_type nettype = network_type::MAINNET);
+get_default_lmdb_folder(network_type nettype);
 
 bool
 get_blockchain_path(string& blockchain_path,
-                    network_type nettype = network_type::MAINNET);
+                    network_type nettype);
 
 template <typename T>
 bool
@@ -50,7 +50,7 @@ parse_str_secret_key(const string& key_str, T& secret_key);
 bool
 parse_str_address(const string& address_str,
                   address_parse_info& address_info,
-                  cryptonote::network_type nettype = cryptonote::network_type::MAINNET);
+                  cryptonote::network_type nettype);
 
 
 bool
