@@ -136,7 +136,7 @@ public:
     Input(address_parse_info const* _a,
            secret_key const* _viewkey,
            known_outputs_t const* _known_outputs,
-           AbstractCore const* _mcore)
+           AbstractCore* _mcore)
         : BaseIdentifier(_a, _viewkey),          
           known_outputs {_known_outputs},
           mcore {_mcore}
@@ -182,7 +182,7 @@ protected:
 
     secret_key const* viewkey {nullptr};   
     known_outputs_t const* known_outputs {nullptr};
-    AbstractCore const* mcore {nullptr};
+    AbstractCore* mcore {nullptr};
     vector<info> identified_inputs;
 };
 

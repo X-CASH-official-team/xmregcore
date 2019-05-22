@@ -111,15 +111,15 @@ void
 MicroCore::get_output_key(uint64_t amount,
                vector<uint64_t> const& absolute_offsets,
                vector<cryptonote::output_data_t>& outputs) 
-                const
+                
 {
     core_storage.get_db()
-            .get_output_key(epee::span<const uint64_t>(&amount, 1),
+            .get_output_key(amount, 
                             absolute_offsets, outputs);
 }
 
 uint64_t
-MicroCore::get_num_outputs(uint64_t amount) const
+MicroCore::get_num_outputs(uint64_t amount) 
 {
     return core_storage.get_db().
             get_num_outputs(amount);
@@ -128,7 +128,7 @@ MicroCore::get_num_outputs(uint64_t amount) const
 
 output_data_t
 MicroCore::get_output_key(uint64_t amount,
-               uint64_t global_amount_index) const 
+               uint64_t global_amount_index) 
 {
     return core_storage.get_db()
                 .get_output_key(amount, global_amount_index);
@@ -190,7 +190,7 @@ std::vector<uint64_t>
 MicroCore::get_tx_amount_output_indices(uint64_t tx_id) const
 {
     return core_storage.get_db()
-            .get_tx_amount_output_indices(tx_id).front();
+            .get_tx_amount_output_indices(tx_id);
 }
 
 bool
